@@ -97,10 +97,6 @@ export class SyncService {
                     sync.type = DeviceTypes.Lock;
                     sync.traits.push(Traits.LockUnlock);
                     break;
-                case 'lock':
-                    sync.type = DeviceTypes.Lock;
-                    sync.traits.push(Trait.LockUnlock);
-                    break;
             }
             syncDevices.push(sync);
         }
