@@ -54,13 +54,13 @@ export class ExecuteService {
           case ExecuteCommandTypes.OpenClose:
             this.devices.updateDevicesState(deviceIds, execution.params, updateOptions);
             break;
+//          case ExecuteCommandTypes.LockUnlock:
+//            this.devices.updateDevicesState(deviceIds, {
+//              isLocked: execution.params.lock,
+//            }, updateOptions);
+//            break;
           case ExecuteCommandTypes.LockUnlock:
-            this.devices.updateDevicesState(deviceIds, {
-              isLocked: execution.params.lock,
-            }, updateOptions);
-            break;
-          case ExecuteCommandTypes.LockUnlock:
-            const lock: boolean = typeof execution.params.lock === 'boolean' ? execution.params.lock : true;
+            const lock: boolean = typeof execution.params.lock === 'boolean' ? execution.params.lock : false;
             this.devices.LockUnlock(deviceIds, lock);         
             break;
           case ExecuteCommandTypes.ActivateScene:
